@@ -38,10 +38,10 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 export class TableFilteringExample {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSourse = new MatTableDataSource(ELEMENT_DATA);
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSourse.filter = filterValue.trim().toLowerCase();
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 }
