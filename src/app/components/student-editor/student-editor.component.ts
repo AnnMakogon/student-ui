@@ -21,5 +21,4 @@ export class StudentEditorComponent implements OnInit {
     this.editingStudent = new Student();
   }
 
-
 }

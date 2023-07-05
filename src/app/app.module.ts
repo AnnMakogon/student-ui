@@ -1,3 +1,4 @@
+import { InMemoryDateService } from './service/in-memory-date.service';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,7 +13,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { DialogEditWrapperComponent } from './components/student-editor/dialog-edit-wrapper/dialog-edit-wrapper.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+//import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 
 @NgModule({
@@ -30,9 +32,10 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
+    HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot (
-      InMemoryDataService, { dataEncapsulation: false }
-    ),
+      InMemoryDateService, { dataEncapsulation: false }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
