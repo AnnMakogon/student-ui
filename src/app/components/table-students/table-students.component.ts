@@ -4,11 +4,17 @@ import { BaseServiceService } from '../../service/base-service.service';
 import { MatDialog } from "@angular/material/dialog";
 import { DialogEditWrapperComponent } from '../../components/student-editor/dialog-edit-wrapper/dialog-edit-wrapper.component';
 import { HttpClient } from '@angular/common/http';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
+
 
 @Component({
   selector: 'app-table-students',
   templateUrl: './table-students.component.html',
-  styleUrls: ['./table-students.component.scss']
+  styleUrls: ['./table-students.component.scss'],
+  standalone: true,
+  imports: [MatButtonModule, MatDividerModule, MatIconModule],
 })
 export class TableStudentsComponent implements OnInit {
   students: Student[];
