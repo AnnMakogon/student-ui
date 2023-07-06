@@ -8,12 +8,15 @@ import { AppComponent } from './app.component';
 import { StudentEditorComponent } from './components/student-editor/student-editor.component';
 import { TableStudentsComponent } from './components/table-students/table-students.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { DialogEditWrapperComponent } from './components/student-editor/dialog-edit-wrapper/dialog-edit-wrapper.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+//import { DialogService } from './service/dialog.service';
+
+
 //import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 
@@ -25,6 +28,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
     DialogEditWrapperComponent
   ],
   imports: [
+    MatDialogModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -37,7 +41,20 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
       InMemoryDateService, { dataEncapsulation: false }
     )
   ],
-  providers: [],
+  providers: [
+    /*{
+      provide: MatDialogModule,
+      useValue: {}
+    },*/
+    {
+      provide: MatDialogRef,
+      useValue: {}
+    },
+    {
+      provide: MAT_DIALOG_DATA,
+      useValue: {}
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
