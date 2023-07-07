@@ -48,9 +48,8 @@ const NAMES: string[]=[
   selector: 'app-sort-pagin-filter',
   templateUrl: './sort-pagin-filter.component.html',
   styleUrls: ['./sort-pagin-filter.component.scss'],
-  standalone:true,
-  imports: [MatFormFieldModule, MatInputModule,
-  MatTableModule, MatSortModule, MatPaginatorModule],
+  standalone: true,
+  imports: [MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule],
 })
 export class SortPaginFilterComponent implements AfterViewInit {
   displayedColumns: string[]=['id', 'name', 'progress', 'fruit'];
@@ -82,7 +81,8 @@ export class SortPaginFilterComponent implements AfterViewInit {
 }
 
 function createNewUser(id: number): UserData {
-  const name = NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
+  const name =
+  NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
   NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
 
   return {

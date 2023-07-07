@@ -21,6 +21,8 @@ import { SortTableComponent } from './src/sort-table/sort-table.component';
 
 import { CommonModule } from '@angular/common';
 import { SortPaginFilterComponent } from './src/sort-pagin-filter/sort-pagin-filter.component';
+import { NewTableStudentComponent } from './components/new-table-student/new-table-student.component';
+//import { MatTable } from '@angular/material/table'
 //import { BrowserModule } from '@angular/platform-browser';
 //import { dataSource } from '';
 //import { CreateTableComponent } from './src/create-table/create-table.component';
@@ -36,6 +38,8 @@ import { SortPaginFilterComponent } from './src/sort-pagin-filter/sort-pagin-fil
     DialogEditWrapperComponent,
   ],
   imports: [
+
+    NewTableStudentComponent,
     SortPaginFilterComponent,
     //StudentEditorComponent,
     //HouseModule,
@@ -55,7 +59,7 @@ import { SortPaginFilterComponent } from './src/sort-pagin-filter/sort-pagin-fil
     HttpClientInMemoryWebApiModule.forRoot (
       InMemoryDateService, { dataEncapsulation: false }
     ),
-    CommonModule
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -64,3 +68,4 @@ import { SortPaginFilterComponent } from './src/sort-pagin-filter/sort-pagin-fil
 })
 export class AppModule { }
 //export class ProductModule { }
+export class MySharedModule {}
