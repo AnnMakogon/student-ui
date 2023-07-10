@@ -22,6 +22,7 @@ import { SortTableComponent } from './src/sort-table/sort-table.component';
 import { CommonModule } from '@angular/common';
 import { SortPaginFilterComponent } from './src/sort-pagin-filter/sort-pagin-filter.component';
 import { NewTableStudentComponent } from './components/new-table-student/new-table-student.component';
+import { MatButtonModule } from '@angular/material/button';
 //import { MatTable } from '@angular/material/table'
 //import { BrowserModule } from '@angular/platform-browser';
 //import { dataSource } from '';
@@ -56,6 +57,7 @@ import { NewTableStudentComponent } from './components/new-table-student/new-tab
     MatInputModule,
     HttpClientModule,
     TableFilteringExample,
+    MatButtonModule,
     HttpClientInMemoryWebApiModule.forRoot (
       InMemoryDateService, { dataEncapsulation: false }
     ),

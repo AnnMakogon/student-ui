@@ -1,3 +1,4 @@
+import { TableServiceService } from './../../service/table-service.service';
 import { Component, OnInit } from '@angular/core';
 import { Student } from '../../models/student';
 import { BaseServiceService } from '../../service/base-service.service';
@@ -14,6 +15,7 @@ import {MatButtonModule} from '@angular/material/button';
 })
 export class StudentEditorComponent implements OnInit {
   editingStudent: Student;
+  tableService: any;
 
   constructor (private baseService: BaseServiceService) {
     this.editingStudent = new Student();
@@ -22,7 +24,7 @@ export class StudentEditorComponent implements OnInit {
   ngOnInit() {}
 
   addStudent(): void {
-    this.baseService.addNewStudent(this.editingStudent);
+    this.tableService.addNewStudent(this.editingStudent);
     this.editingStudent = new Student();
   }
 

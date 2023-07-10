@@ -37,4 +37,9 @@ export class TableServiceService {
     console.log ('count of students' + this.students.length);
     return this.students;
   }
+
+  addNewStudent(student: Student): void {
+    console.log ('addNewStudent');
+    this.students.push(student);
+  }
 }
