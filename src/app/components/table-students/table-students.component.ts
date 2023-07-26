@@ -1,3 +1,4 @@
+//import { TableServiceService } from './../../service/table-service.service';
 import { Component, OnInit, Inject } from '@angular/core';
 import { Student } from '../../models/student';
 import { BaseServiceService } from '../../service/base-service.service';
@@ -17,11 +18,12 @@ import { NgFor, NgForOf } from "@angular/common";
   imports: [MatButtonModule, MatDividerModule, MatIconModule, NgForOf],
 })
 export class TableStudentsComponent implements OnInit {
+
   students: Student[];
+  TableServiceService: any;
 
   constructor(private baseService: BaseServiceService,
     public dialog: MatDialog,
-   // @Inject(String) private url: string,
     private http: HttpClient
     ) {
     this.students = [];
@@ -31,6 +33,12 @@ export class TableStudentsComponent implements OnInit {
     console.log ("TableStudentsComponent");
     this.baseService.getAllStudents().subscribe(data => this.students = data);
   }
+
+  /*ngOnInit() {
+    console.log ("newTableStudentComponent");
+    this.students = this.TableServiceService();
+  }*/
+
   addNewStudent(): void {
     const dialogAddingNewStudent = this.dialog.open(DialogEditWrapperComponent,{
       width: '400px',
@@ -40,8 +48,8 @@ export class TableStudentsComponent implements OnInit {
       if(result != null) {
         console.log ("adding new student: " + result.name);
         this.baseService.addNewStudent(result).subscribe(k=>
-          this.baseService.getAllStudents().subscribe(data => this.students =
-            data) );
+          this.baseService.getAllStudents().subscribe(data => this.students = data)
+        );
       }
     });
   }

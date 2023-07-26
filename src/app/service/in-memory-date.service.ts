@@ -12,7 +12,10 @@ export class InMemoryDateService implements InMemoryDbService {
   const students = [
     {id: 0, name: 'Имя', surname: 'Фамилия'},
     {id: 1, name: 'Имя 1', surname: 'Фамилия 1'},
-    {id: 2, name: 'Имя 2', surname: 'Фамилия 2'}
+    {id: 2, name: 'Имя 2', surname: 'Фамилия 2'},
+    {id: 3, name: 'Имя 3', surname: 'Фамилия 3'},
+    {id: 4, name: 'Имя 4', surname: 'Фамилия 4'},
+    {id: 5, name: 'Имя 5', surname: 'Фамилия 5'},
   ];
   return {students};
   }

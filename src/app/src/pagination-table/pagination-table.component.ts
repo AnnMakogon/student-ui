@@ -13,8 +13,7 @@ export class PaginationTableComponent implements AfterViewInit {
   displayedColumns: string [] = ['id', 'name', 'surname'];
   dataSource = new MatTableDataSource<StudentTable>(ELEMENT_DATA);
 
-  @ViewChild(MatPaginator)
-  paginator!: MatPaginator;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;

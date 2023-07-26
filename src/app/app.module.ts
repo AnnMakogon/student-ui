@@ -1,6 +1,7 @@
 import { InMemoryDateService } from './service/in-memory-date.service';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { TableFilteringExample } from './src/create-table/create-table.component';
 
@@ -18,56 +19,53 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { PaginationTableComponent } from './src/pagination-table/pagination-table.component';
 import { SortTableComponent } from './src/sort-table/sort-table.component';
 
-
 import { CommonModule } from '@angular/common';
 import { SortPaginFilterComponent } from './src/sort-pagin-filter/sort-pagin-filter.component';
-import { NewTableStudentComponent } from './components/new-table-student/new-table-student.component';
 import { MatButtonModule } from '@angular/material/button';
-//import { MatTable } from '@angular/material/table'
-//import { BrowserModule } from '@angular/platform-browser';
-//import { dataSource } from '';
-//import { CreateTableComponent } from './src/create-table/create-table.component';
-//import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-
-//import { PeriodicElement } from './src/create-table/create-table.component';
+import { NewNewTableComponent } from './components/new-new-table/new-new-table.component';
+import { DialogEditWrapperDelComponent } from './components/student-editor/dialog-edit-wrapper-del/dialog-edit-wrapper-del.component';
+import { DialogEditWrapperPutComponent } from './components/student-editor/dialog-edit-wrapper-put/dialog-edit-wrapper-put.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StudentEditorComponent,
-    //TableStudentsComponent,
     DialogEditWrapperComponent,
+    DialogEditWrapperDelComponent,
+    DialogEditWrapperPutComponent,
   ],
   imports: [
+    NewNewTableComponent,
 
-    NewTableStudentComponent,
     SortPaginFilterComponent,
-    //StudentEditorComponent,
-    //HouseModule,
     TableStudentsComponent,
     SortTableComponent,
     PaginationTableComponent,
     TableFilteringExample,
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+
     MatDialogModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
-    HttpClientModule,
+
     TableFilteringExample,
     MatButtonModule,
+
+    HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot (
       InMemoryDateService, { dataEncapsulation: false }
     ),
+    InMemoryWebApiModule.forRoot(InMemoryDateService),
     CommonModule,
+
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [],
-  //declarations: []
+  exports: [FormsModule],
 })
 export class AppModule { }
-//export class ProductModule { }
 export class MySharedModule {}
