@@ -54,9 +54,9 @@ import { DialogEditWrapperPutComponent } from './components/student-editor/dialo
     MatButtonModule,
 
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot (
-      InMemoryDateService, { dataEncapsulation: false }
-    ),
+    //HttpClientInMemoryWebApiModule.forRoot (
+    //  InMemoryDateService, { dataEncapsulation: false }
+    //),
     InMemoryWebApiModule.forRoot(InMemoryDateService),
     CommonModule,
 
