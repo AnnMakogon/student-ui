@@ -32,6 +32,7 @@ export class TableStudentsComponent implements OnInit {
   ngOnInit() {
     console.log ("TableStudentsComponent");
     this.baseService.getAllStudents().subscribe(data => this.students = data);
+    //new Proxy
   }
 
   /*ngOnInit() {
@@ -46,7 +47,7 @@ export class TableStudentsComponent implements OnInit {
     });
     dialogAddingNewStudent.afterClosed().subscribe((result: Student) =>{
       if(result != null) {
-        console.log ("adding new student: " + result.name);
+        console.log ("adding new student: " + result.fio);
         this.baseService.addNewStudent(result).subscribe(k=>
           this.baseService.getAllStudents().subscribe(data => this.students = data)
         );

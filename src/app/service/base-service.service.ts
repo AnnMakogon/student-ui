@@ -12,13 +12,16 @@ const httpOptions = {
 })
 export class BaseServiceService{
 
-  private studentsUrl = 'api/students';
+  private studentsUrl = 'api/base/students';
   constructor(
    private http: HttpClient) {}
 
   getAllStudents(): Observable<Student[]> {
     return this.http.get<Student[]>(this.studentsUrl);
   }
+  /*getAllStudents (): Observable<Student[]> {
+    return this.http.get<[]>('/students')
+  }*/
 
   getOneStudents(student: Student ): Observable<Student> {
     const url = `${this.studentsUrl}/${student.id}`;
@@ -35,9 +38,9 @@ export class BaseServiceService{
     return this.http.delete<Student>(url).pipe();
   }
 
-  putStudent(student: Student, id: any): Observable<null | Student> {
+ /* putStudent(student: Student, id: any): Observable<null | Student> {
     console.log ("Put Student " + id);
     id = Number(id);
     return this.http.put<Student>(this.studentsUrl, {id: id, name: student.name, surname: student.surname}, httpOptions).pipe();
-  }
+  }*/
 }

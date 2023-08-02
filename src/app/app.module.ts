@@ -1,5 +1,5 @@
-import { InMemoryDateService } from './service/in-memory-date.service';
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+//import { InMemoryDateService } from './service/in-memory-date.service';
+//import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -22,20 +22,20 @@ import { SortTableComponent } from './src/sort-table/sort-table.component';
 import { CommonModule } from '@angular/common';
 import { SortPaginFilterComponent } from './src/sort-pagin-filter/sort-pagin-filter.component';
 import { MatButtonModule } from '@angular/material/button';
-import { NewNewTableComponent } from './components/new-new-table/new-new-table.component';
-import { DialogEditWrapperDelComponent } from './components/student-editor/dialog-edit-wrapper-del/dialog-edit-wrapper-del.component';
-import { DialogEditWrapperPutComponent } from './components/student-editor/dialog-edit-wrapper-put/dialog-edit-wrapper-put.component';
+//import { NewNewTableComponent } from './components/new-new-table/new-new-table.component';
+//import { DialogEditWrapperDelComponent } from './components/student-editor/dialog-edit-wrapper-del/dialog-edit-wrapper-del.component';
+//import { DialogEditWrapperPutComponent } from './components/student-editor/dialog-edit-wrapper-put/dialog-edit-wrapper-put.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StudentEditorComponent,
     DialogEditWrapperComponent,
-    DialogEditWrapperDelComponent,
-    DialogEditWrapperPutComponent,
+   // DialogEditWrapperDelComponent,
+    //DialogEditWrapperPutComponent,
   ],
   imports: [
-    NewNewTableComponent,
+    //NewNewTableComponent,
 
     SortPaginFilterComponent,
     TableStudentsComponent,
@@ -57,7 +57,7 @@ import { DialogEditWrapperPutComponent } from './components/student-editor/dialo
     //HttpClientInMemoryWebApiModule.forRoot (
     //  InMemoryDateService, { dataEncapsulation: false }
     //),
-    InMemoryWebApiModule.forRoot(InMemoryDateService),
+    //InMemoryWebApiModule.forRoot(InMemoryDateService),
     CommonModule,
 
     ReactiveFormsModule,
